@@ -1,0 +1,20 @@
+import * as types from './../constants/ActionTypes';
+
+var initialState = {
+	name: '',
+	status : -1    //tat ca: -1, kich hoat: 1, an: 0
+};
+
+var myReducer = (state = initialState, action) => {
+	switch(action.type){
+		case types.FILTER_TABLE:
+			return {
+				name : action.filter.name,
+				status : parseInt(action.filter.status, 10)
+			};
+		default: 
+			return state;
+	}
+};
+
+export default myReducer;
